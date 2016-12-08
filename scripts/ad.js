@@ -21,7 +21,7 @@ $(function () {
             index++;          //由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数
             if(index==len){index=0}   //if判断用==
         },5000)
-    }).trigger('mouseleave')    //trigger() 方法触发被选元素的指定事件类型
+    }).trigger('mouseleave');   //trigger() 方法触发被选元素的指定事件类型
 
 });
 function showImg(index) {

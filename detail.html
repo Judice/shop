@@ -5,10 +5,38 @@
     <title>JD shopping</title>
     <link rel="stylesheet" href="styles/main.css" type="text/css">
     <link rel="stylesheet" href="styles/reset.css" type="text/css">
-    <link rel="stylesheet" href="styles/skin/skin_0.css" type="text/css">
+    <link rel="stylesheet" href="styles/skin/skin_0.css" type="text/css" id="cssfile">
     <link rel="stylesheet" href="styles/thickbox.css" type="text/css" />
+    <link rel="stylesheet" href='styles/box.css' type='text/css' />
     <script src="scripts/jquery.js" type="text/javascript"></script>
     <script src="scripts/jquery.cookie.js" type="text/javascript"></script>
+    <script src="scripts/jquery.cookie.js" type="text/javascript"></script>
+    <!-- 搜索文本框效果 -->
+    <script src="scripts/input.js" type="text/javascript"></script>
+    <!-- 修改皮肤样式 -->
+    <script src="scripts/changeSkin.js" type="text/javascript"></script>
+    <!-- 导航效果 -->
+    <script src="scripts/nav.js" type="text/javascript"></script>
+    <!-- 添加hot显示 -->
+    <script src="scripts/addHot.js" type="text/javascript"></script>
+    <!-- 产品缩略图 -->
+    <script src="scripts/jquery.jqzoom.js" type="text/javascript"></script>
+    <script src="scripts/use_jqzoom.js" type="text/javascript"></script>
+    <!-- 遮罩图片 -->
+    <script src="scripts/jquery.thickbox.js" type="text/javascript"></script>
+    <!-- 产品小图切换大图 -->
+    <script src="scripts/switchImg.js" type="text/javascript"></script>
+    <!-- Tab标签 -->
+    <script src="scripts/tab.js" type="text/javascript"></script>
+    <!-- 产品尺寸和价格计算 -->
+    <script src="scripts/sizeAndprice.js" type="text/javascript"></script>
+    <!-- 星级评分 -->
+    <script src="scripts/star.js" type="text/javascript"></script>
+    <!-- 产品换颜色 -->
+    <script src="scripts/switchColor.js" type="text/javascript"></script>
+    <!-- 内容提交 -->
+    <script src="scripts/jquery.simplemodal.js" type="text/javascript"></script>
+    <script src="scripts/finish.js" type="text/javascript"></script>
 </head>
 <body>
 <!--头部-->
@@ -27,9 +55,9 @@
         </ul>
         <!--导航-->
         <div class="mainNav" >
-            <ul class="nav">
+            <ul id="nav">
                 <li><a href="#">首页</a></li>
-                <li><a href="#">品牌</a></li>
+                <li><a href="#">品牌</a>
                 <div class="jnNav">
                     <div class="subitem">
                         <dl class="fore">
@@ -52,7 +80,8 @@
                         </dl>
                     </div>
                 </div>
-                <li><a href="#">女装</a></li>
+                </li>
+                <li><a href="#">女装</a>
                 <div class="jnNav">
                     <div class="subitem">
                         <dl class="fore">
@@ -76,7 +105,8 @@
 
                     </div>
                 </div>
-                <li><a href="#">男装</a></li>
+                </li>
+                <li><a href="#">男装</a>
                 <div class="jnNav">
                     <div class="subitem">
                         <dl class="fore">
@@ -99,6 +129,7 @@
                         </dl>
                     </div>
                 </div>
+                </li>
                 <li><a href="#">鞋包配饰</a></li>
             </ul>
         </div>
@@ -167,22 +198,26 @@
         <!--商品信息-->
         <div id="jnProitem">
             <div class="jqzoomWrap">
-                <a>
-                    <img src="images/pro_img/blue_one_small.jpg">
+                <a href="images/pro_img/blue_one_big.jpg" class="jqzoom" rel="gall" title="免烫高支棉条纹衬衫">       <!--不要漏掉class="jqzoom"-->
+                    <img src="images/pro_img/blue_one_small.jpg" alt="免烫高支棉条纹衬衫" id="bigImg" >
                 </a>
             </div>
-            <span><img src="images/look.gif"></span>
+            <span>
+                <a id="thickImg" href="images/pro_img/blue_one_big.jpg" class="thickbox">
+                <img src="images/look.gif" alt="点击查看大图">
+                </a>
+            </span>
             <ul class="imgList">
-                <li class="imgList_blue"><a><img src="images/pro_img/blue_one.jpg"></a></li>
-                <li class="imgList_blue"><a><img src="images/pro_img/blue_two.jpg"></a></li>
-                <li class="imgList_blue"><a><img src="images/pro_img/blue_three.jpg"></a></li>
+                <li class="imgList_blue"><a href='javascript:void(0);' rel="{gallery:'gall',smallimage:'images/pro_img/blue_one_small.jpg',largeimage:'images/pro_img/blue_one_big.jpg'}"><img src="images/pro_img/blue_one.jpg"></a></li>
+                <li class="imgList_blue"><a href='javascript:void(0);' rel="{gallery:'gall',smallimage:'images/pro_img/blue_two_small.jpg',largeimage:'images/pro_img/blue_two_big.jpg'}"><img src="images/pro_img/blue_two.jpg"></a></li>
+                <li class="imgList_blue"><a href='javascript:void(0);' rel="{gallery:'gall',smallimage:'images/pro_img/blue_three_small.jpg',largeimage:'images/pro_img/blue_three_big.jpg'}"><img src="images/pro_img/blue_three.jpg"></a></li>
 
-                <li class="imgList_yellow hide"><a><img src="images/pro_img/yellow_one.jpg"></a></li>
-                <li class="imgList_yellow hide"><a><img src="images/pro_img/yellow_two.jpg"></a></li>
-                <li class="imgList_yellow hide"><a><img src="images/pro_img/yellow_three.jpg"></a></li>
+                <li class="imgList_yellow hide"><a href='javascript:void(0);' rel="{gallery:'gall',smallimage:'images/pro_img/yellow_one_small.jpg',largeimage:'images/pro_img/yellow_one_big.jpg'}"><img src="images/pro_img/yellow_one.jpg"></a></li>
+                <li class="imgList_yellow hide"><a href='javascript:void(0);' rel="{gallery:'gall',smallimage:'images/pro_img/yellow_two_small.jpg',largeimage:'images/pro_img/yellow_two_big.jpg'}"><img src="images/pro_img/yellow_two.jpg"></a></li>
+                <li class="imgList_yellow hide"><a href='javascript:void(0);' rel="{gallery:'gall',smallimage:'images/pro_img/yellow_three_small.jpg',largeimage:'images/pro_img/yellow_three_big.jpg'}"><img src="images/pro_img/yellow_three.jpg"></a></li>
 
-                <li class="imgList_green hide"><a><img src="images/pro_img/green_one.jpg"></a></li>
-                <li class="imgList_green hide"><a><img src="images/pro_img/green_two.jpg"></a></li>
+                <li class="imgList_green hide"><a href='javascript:void(0);' rel="{gallery:'gall',smallimage:'images/pro_img/green_one_small.jpg',largeimage:'images/pro_img/green_one_big.jpg'}"><img src="images/pro_img/green_one.jpg"></a></li>
+                <li class="imgList_green hide"><a href='javascript:void(0);' rel="{gallery:'gall',smallimage:'images/pro_img/green_two_small.jpg',largeimage:'images/pro_img/green_two_big.jpg'}"><img src="images/pro_img/green_two.jpg"></a></li>
             </ul>
             <div class="tab">
                 <div class="tab_menu">
@@ -224,9 +259,9 @@
                         <span>颜&#12288;&#12288;色: </span>
                         <strong>蓝白</strong>
                         <ul>
-                            <li><img src="images/pro_img/blue.jpg"></li>
-                            <li><img src="images/pro_img/yellow.jpg"></li>
-                            <li><img src="images/pro_img/green.jpg"></li>
+                            <li><img alt="蓝白" src="images/pro_img/blue.jpg"></li>
+                            <li><img alt='黄白' src="images/pro_img/yellow.jpg"></li>
+                            <li><img alt='粉绿' src="images/pro_img/green.jpg"></li>
                         </ul>
                     </li>
                     <li class="pro_size">
@@ -242,7 +277,7 @@
                     <li>
                         <span>数&#12288;&#12288;量: </span>
                         <div class="pro_num">
-                            <select>
+                            <select id="num_sort">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -253,21 +288,21 @@
                     </li>
                     <li class="pro_price">
                         <span>总&#12288;&#12288;记:</span>
-                        <strong>200.00元</strong>
+                        <strong>200.00</strong>元
                     </li>
                 </ul>
-                <div>
+                <div >
                     给商品评分：
-                    <ul class="rating nostar">
-                        <li><a>1</a></li>
-                        <li><a>2</a></li>
-                        <li><a>3</a></li>
-                        <li><a>4</a></li>
-                        <li><a>5</a></li>
+                    <ul class="rating ">
+                        <li class="one"><a href="#" title="1分">1</a></li>
+                        <li class="two"><a href="#" title="2分">2</a></li>
+                        <li class="three"><a href="#" title="3分">3</a></li>
+                        <li class="four"><a href="#" title="4分">4</a></li>
+                        <li class="five"><a href="#" title="5分">5</a></li>
                     </ul>
                 </div>
-                <div>
-                    <a><img src="images/btn_cart.png" alt="放入购物车"></a>
+                <div id="cart">
+                    <a href="#"><img src="images/btn_cart.png" alt="放入购物车"></a>
                 </div>
             </div>
         </div>
@@ -278,5 +313,23 @@
 <!--底部-->
 <div id="footer">Copyright &copy; 2009 - 2016 JaneShop Inc.</div>
 <!--底部end-->
+
+<!-- 普通弹出层 [[ -->
+<div id="basic-dialog-ok">
+    <div class="box-title show"><h2>提示</h2></div>
+    <div class="box-main">
+        <div class="tips">
+			<span class="tips-ico">
+				<span class="ico-ok"><!-- 图标 --></span>
+			</span>
+            <div class="tips-content">
+                <div class="tips-title" id="jnDialogContent"></div>
+                <div class="tips-line"></div>
+            </div>
+        </div>
+        <div class="box-buttons"><button type="button" class="simplemodal-close">关 闭</button></div>
+    </div>
+</div>
+<!-- 普通弹出层 ]] -->
 </body>
 </html>
